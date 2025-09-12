@@ -46,7 +46,7 @@ function Error() {
         </div>
       </div>
     </div>
-    {/* 404 End */} 
+    {/* 404 End */}
     </div>
   )
 }
