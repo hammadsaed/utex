@@ -1,0 +1,329 @@
+/* Chat Widget Custom Styling */
+
+/* Override react-chat-widget default styles */
+.rcw-conversation-container {
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 380px !important;
+  height: 600px !important;
+  max-width: 380px !important;
+  max-height: 600px !important;
+}
+
+.rcw-header {
+  background: linear-gradient(135deg, #86b817 0%, #6a8f12 100%);
+  color: white;
+  padding: 16px;
+  border-radius: 12px 12px 0 0;
+}
+
+.rcw-header-close-button {
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.rcw-header-close-button:hover {
+  opacity: 1;
+}
+
+.rcw-messages-container {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+  padding: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.rcw-message {
+  margin-bottom: 12px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rcw-client .rcw-message-text {
+  background-color: black;
+}
+
+.rcw-message.rcw-message-client {
+  text-align: right;
+}
+
+.rcw-response {
+  border-radius: 18px 18px 18px 4px;
+  background: #94a3b8;
+  padding: 12px 18px;
+}
+
+.rcw-response .rcw-message-text {
+  background-color: black;
+}
+
+.rcw-message-text p {
+  color: white;
+}
+
+.rcw-timestamp {
+  color: white;
+}
+
+.rcw-message.rcw-message-client .rcw-client {
+  background: #9ca3af;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.rcw-message.rcw-message-response .rcw-response {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  color: #15803d;
+  border-radius: 18px 18px 18px 4px;
+  padding: 12px 18px;
+  border: 2px solid #86b817;
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 8px 24px rgba(134, 184, 23, 0.25);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Hide emoji icon and related elements */
+.rcw-emoji-picker-container {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.rcw-emoji-picker {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.rcw-emoji-picker-icon {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide all emoji buttons */
+button[aria-label*="emoji"],
+button[aria-label*="Emoji"],
+[class*="emoji"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide emoji in sender area */
+.rcw-sender > button:first-child {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.rcw-sender {
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100% !important;
+  justify-content: space-evenly;
+}
+
+.rcw-input {
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  flex: 1;
+  min-width: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.rcw-input:focus {
+  outline: none;
+  border-color: #86b817;
+  box-shadow: 0 0 0 3px rgba(134, 184, 23, 0.1);
+}
+
+/* Send button styling - aggressive overrides */
+button.rcw-send-button,
+.rcw-send-button {
+  background-color: #86b817 !important;
+  background: #86b817 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: drop-shadow(none) !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  opacity: 1 !important;
+}
+
+button.rcw-send-button:hover:not(:disabled),
+.rcw-send-button:hover:not(:disabled) {
+  background-color: #6a8f12 !important;
+  background: #6a8f12 !important;
+  transform: scale(1.05) !important;
+  box-shadow: none !important;
+  filter: drop-shadow(none) !important;
+}
+
+button.rcw-send-button:active:not(:disabled),
+.rcw-send-button:active:not(:disabled) {
+  transform: scale(0.95) !important;
+  box-shadow: none !important;
+  filter: drop-shadow(none) !important;
+}
+
+button.rcw-send-button:focus,
+.rcw-send-button:focus {
+  box-shadow: none !important;
+  filter: drop-shadow(none) !important;
+}
+
+button.rcw-send-button:disabled,
+.rcw-send-button:disabled {
+  background-color: #c5d96f !important;
+  background: #c5d96f !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  transform: scale(1) !important;
+}
+
+button.rcw-send-button:disabled:hover,
+.rcw-send-button:disabled:hover {
+  background-color: #c5d96f !important;
+  background: #c5d96f !important;
+  transform: scale(1) !important;
+}
+
+/* Style the SVG icon inside send button */
+.rcw-send-button svg,
+button.rcw-send-button svg {
+  fill: white !important;
+  stroke: white !important;
+}
+
+.rcw-launcher {
+  background: linear-gradient(135deg, #86b817 0%, #6a8f12 100%);
+  box-shadow: 0 4px 12px rgba(134, 184, 23, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rcw-launcher:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(134, 184, 23, 0.6);
+}
+
+.rcw-launcher.active {
+  box-shadow: 0 4px 12px rgba(134, 184, 23, 0.4);
+}
+
+/* Quick buttons styling */
+.rcw-quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.rcw-quick-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.rcw-quick-button:hover {
+  background-color: #86b817;
+  color: white;
+  border-color: #86b817;
+  transform: translateY(-2px);
+}
+
+/* Loading indicator */
+.rcw-loader {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px 18px 18px 4px;
+  padding: 10px 16px;
+}
+
+.rcw-loader span {
+  background-color: #86b817;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .rcw-conversation-container {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+
+  .rcw-header {
+    border-radius: 0;
+  }
+
+  .rcw-messages-container {
+    max-height: calc(100vh - 120px);
+  }
+
+  .rcw-message.rcw-message-client .rcw-client,
+  .rcw-message.rcw-message-response .rcw-response {
+    max-width: 90%;
+  }
+}
+
+/* Accessibility improvements */
+.rcw-input:focus-visible {
+  outline: 2px solid #86b817;
+  outline-offset: 2px;
+}
+
+.rcw-send-button:focus-visible {
+  outline: 2px solid #86b817;
+  outline-offset: 2px;
+}
+
+.rcw-launcher:focus-visible {
+  outline: 2px solid #86b817;
+  outline-offset: 2px;
+}
